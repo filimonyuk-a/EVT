@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Анимации</title>
+</head>
+<body>
+    <header>
+        <h1>Анимации</h1>
+    </header>
+    <button onclick="resetPendulum()">Click on me</button>
+    <a href="#">Link to a very important site</a>  
+    <div class="ball"></div>    
+    <div class="ball2"></div>          
+    <script>
+        // Параметры маятника
+        const g = 2.81; // угловое ускорение (м/с²)
+        const L = 400; // длина маятника (м), увеличена для большего колебания
+        let theta0 = 110; // начальный угол отклонения (в градусах)
+        const omega0 = Math.sqrt(g / L); // угловая частота (рад/с)
+
+        let t = 0; // время в секундах
+        let damping = 0.995; // коэффициент затухания для амплитуды
+        const ball = document.querySelector('.ball2'); // Элемент для анимации
+
+        // Центр маятника (точка подвеса)
+        const pivotX = window.innerWidth / 2;
+        const pivotY = 500; // Высота точки подвеса
+
+        // Функция для анимации маятника
+        function animatePendulum(time) {
+            // Рассчитываем время, прошедшее с последнего обновления
+            const deltaTime = time / 1000; // Переводим время в секунды
+
+            // Обновляем время (суммируем прошедшее время)
+            t += deltaTime;
+
+            // Обновляем амплитуду с учетом затухания
+            theta0 *= damping; // Затухание амплитуды
+
+            // Рассчитываем угол по косинусной функции (как для идеального маятника)
+            const theta = theta0 * Math.cos(omega0 * t);
+
+            // Вычисляем новые координаты шарика на основе угла
+            const x = pivotX + L * Math.sin(theta * Math.PI / 180); // X-координата
+            const y = pivotY + L * Math.cos(theta * Math.PI / 180); // Y-координата
+
+            // Перемещаем шарик по этим координатам
+            ball.style.left = `${x - ball.offsetWidth / 2}px`; // Центрируем шарик по X
+            ball.style.top = `${y - ball.offsetHeight / 2}px`; // Центрируем шарик по Y
+
+            // Запрашиваем следующий кадр анимации
+            requestAnimationFrame(animatePendulum);
+        }
+
+        // Функция для перезапуска анимации
+        function resetPendulum() {
+            // Сбросить параметры маятника и времени
+            theta0 = 120;  // вернуться к начальной амплитуде
+            t = 0;  // сбросить время
+
+            // Перезапуск анимации
+            requestAnimationFrame(animatePendulum);
+        }
+
+        // Запуск анимации сразу после загрузки страницы
+        requestAnimationFrame(animatePendulum);
+
+    </script>                   
+</body>                                                                                           
+</html>
