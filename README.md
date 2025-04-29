@@ -12,7 +12,7 @@
 
 _Hello, nice to meet you!_
 
-![EC&I engineer](image.png)
+![EC&I engineer](image.jpg)
 
 
 
