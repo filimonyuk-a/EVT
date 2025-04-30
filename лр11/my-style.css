@@ -1,0 +1,85 @@
+* {
+	padding: 0;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	background-color: rgb(104, 101, 99);
+	width: 100%;
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	background-color: rgb(102, 99, 87);
+	width: 100%;
+}
+
+body .wrapper {
+	max-width: 100% !important;
+	text-align: center;
+}
+
+aside blockquote.blockquote {
+	font-weight: normal;
+	font-style: italic;
+}
+
+article.article p {
+	font-style: normal !important;
+}
+
+.word {
+	position: sticky;
+	top: 50px;
+	left: 0px;
+	width: 100px;
+}
+
+.word.first {
+	background-color: rgb(109, 172, 132);
+}
+.word.second {
+	background-color: lightgreen;
+	left: 100px;
+}
+.word.third {
+	background-color: rgb(240, 128, 218);
+	left: 200px;
+}
+.word.fourth {
+	background-color: rgb(122, 255, 233);
+	left: 300px;
+}
+.word.fifth {
+	background-color: rgb(153, 153, 119);
+	left: 400px;
+}
+
+.article img + p::first-letter {
+	font-size: 2em;
+	color: purple;
+	font-weight: bold;
+}
+
+.article:nth-of-type(odd) img {
+	float: left;
+}
+.article:nth-of-type(even) img {
+	float: right;
+}
+
+.article img {
+	min-height: 150px;
+}
+
+footer a:hover {
+	cursor: default;
+}
+
+footer a {
+	padding: 2px;
+	text-decoration: underline !important;
+	color: #00eaff !important;
+}
