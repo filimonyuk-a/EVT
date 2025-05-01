@@ -1,0 +1,106 @@
+html {
+  font-family: sans-serif;
+}
+
+body {
+margin: 0;
+background: linear-gradient(to bottom, #6f6e6e, #1b1b1b);
+height: 100vh; /* Высота для полного охвата экрана */
+}
+
+header {
+  background: rgb(52, 206, 142);
+  height: 100px;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  line-height: 100px;
+  margin: 0;
+}
+.construction {
+  position: relative;
+  width: 500px;
+  height: 400px;
+  margin: auto;
+  border-top: 10px solid white;
+}
+
+.pendulum {
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 300px;
+  transform-origin: top center;
+}
+
+.pendulum:nth-child(1) { 
+  left: 0; 
+}
+.pendulum:nth-child(2) { 
+  left: 100px; 
+}
+.pendulum:nth-child(3) { 
+  left: 200px; 
+}
+.pendulum:nth-child(4) {
+  left: 300px; 
+}
+.pendulum:nth-child(5) { 
+  left: 400px; 
+}
+
+.pendulum::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 200px;
+  background: white;
+  transform: translateX(-50%);
+}
+
+.ball {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background: red;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+.pendulum:first-child {
+  animation: swing-left 2s ease-in-out infinite;
+}
+
+.pendulum:last-child {
+  animation: swing-right 2s 1s ease-in-out infinite;
+}
+
+@keyframes swing-left {
+  0% { 
+      transform: rotate(0deg); 
+  }
+  25% { 
+      transform: rotate(30deg); 
+  }
+  75%, 100% { 
+      transform: rotate(0deg); 
+  }
+}
+
+@keyframes swing-right {
+  0% { 
+      transform: rotate(0deg); 
+  }
+  25% { 
+      transform: rotate(-30deg); 
+  }
+  75%, 100% { 
+      transform: rotate(0deg); 
+  }
+}
