@@ -302,3 +302,52 @@
         color: var(--color-text);
     }
 }
+/* Адаптация переключателя темы */
+@media (max-width: 768px) {
+    #theme-toggle {
+        padding: 10px;
+        min-width: 44px; /* Минимальный размер для сенсорных устройств */
+        min-height: 44px;
+    }
+    
+    #sun-icon, #moon-icon {
+        width: 20px;
+        height: 20px;
+    }
+    
+    body.dark-theme .header {
+        background-color: rgba(10, 10, 10, 0.9);
+    }
+    
+    /* Улучшение видимости в темной теме */
+    .dark-theme .menu-item:hover {
+        background-color: rgba(255, 215, 0, 0.1);
+    }
+}
+@media (max-width: 768px) {
+    /* Стили для темной темы на мобильных */
+    body.dark-theme {
+        --color-bg: #0a0a0a;
+        --color-text: #f0f0f0;
+        --color-card-bg: #1a1a1a;
+    }
+    
+    /* Переключатель темы */
+    #theme-toggle {
+        padding: 10px;
+        min-width: 44px;
+        min-height: 44px;
+        transition: transform 0.2s, opacity 0.2s;
+    }
+    
+    /* Иконки */
+    #sun-icon, #moon-icon {
+        width: 20px;
+        height: 20px;
+    }
+    
+    /* Меню в темной теме */
+    .dark-theme .header .menu {
+        background: rgba(20, 20, 20, 0.98);
+    }
+}

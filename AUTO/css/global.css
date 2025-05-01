@@ -147,3 +147,23 @@ body.dark-theme {
     background: var(--color-review-bg);
     border-color: var(--color-border);
 }
+/* Темная тема для мобильных */
+@media (max-width: 768px) {
+    body.dark-theme {
+        --color-bg: #0a0a0a; /* Более темный фон для OLED */
+        --color-text: #f0f0f0;
+    }
+    
+    .dark-theme .header .menu {
+        background: rgba(20, 20, 20, 0.98) !important;
+        backdrop-filter: blur(10px);
+    }
+    
+    .dark-theme .burger svg path {
+        stroke: var(--color-accent);
+    }
+    
+    .dark-theme .menu-item a {
+        color: #e0e0e0 !important;
+    }
+}
