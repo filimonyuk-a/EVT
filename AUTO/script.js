@@ -1,3 +1,4 @@
+// Burger menu code (оставьте ваш существующий код без изменений)
 let burger = document.getElementById('burger');
 let menu = document.getElementById('menu');
 let closeMenu = document.getElementById('close-menu');
@@ -17,48 +18,52 @@ menuLinks.forEach(link => {
     };
 });
 
-const themeToggleButton = document.getElementById("theme-toggle");
-const sunIcon = document.getElementById("sun-icon");
-const moonIcon = document.getElementById("moon-icon");
-
-themeToggleButton.addEventListener("click", () => {
-    document.body.classList.toggle("dark-theme");
-
-    // Переключение видимости иконок
-    sunIcon.style.display = sunIcon.style.display === "none" ? "inline-block" : "none";
-    moonIcon.style.display = moonIcon.style.display === "none" ? "inline-block" : "none";
+// ===== Dark Theme - NEW CORRECTED VERSION =====
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. Получаем элементы
+    const themeToggleButton = document.getElementById("theme-toggle");
+    const sunIcon = document.getElementById("sun-icon");
+    const moonIcon = document.getElementById("moon-icon");
+    
+    // 2. Проверяем, что элементы существуют
+    if (!themeToggleButton || !sunIcon || !moonIcon) {
+        console.error("One or more theme elements not found!");
+        return;
+    }
+    
+    // 3. Функция для установки темы
+    function setTheme(isDark) {
+        if (isDark) {
+            document.body.classList.add('dark-theme');
+            sunIcon.style.display = 'none';
+            moonIcon.style.display = 'inline-block';
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.body.classList.remove('dark-theme');
+            sunIcon.style.display = 'inline-block';
+            moonIcon.style.display = 'none';
+            localStorage.setItem('theme', 'light');
+        }
+    }
+    
+    // 4. Проверяем сохранённую тему
+    const savedTheme = localStorage.getItem('theme');
+    
+    // 5. Проверяем системные настройки (если нет сохранённой темы)
+    if (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        setTheme(true);
+    } else if (savedTheme === 'dark') {
+        setTheme(true);
+    }
+    
+    // 6. Обработчик клика
+    themeToggleButton.addEventListener('click', function() {
+        const isDark = !document.body.classList.contains('dark-theme');
+        setTheme(isDark);
+    });
 });
 
-
+// ===== Slider Code =====
+// Оставьте ваш существующий код слайдера без изменений
 const track = document.querySelector(".reviews-track");
-const prev = document.querySelector(".move-backward");
-const next = document.querySelector(".move-forward");
-const slides = document.querySelectorAll(".review-item");
-const slideWidth = slides[0].offsetWidth + 24; // Учитываем gap
-let index = 0;
-let isAnimating = false;
-
-function slideTo(newIndex) {
-    if (isAnimating) return;
-    isAnimating = true;
-    index = (newIndex + slides.length) % slides.length;
-    track.style.transform = `translateX(-${index * slideWidth}px)`;
-    setTimeout(() => (isAnimating = false), 500); // Задержка для плавности
-}
-
-let autoSlide = setInterval(() => slideTo(index + 1), 3000);
-
-next.addEventListener("click", () => {
-    slideTo(index + 1);
-    resetAutoSlide();
-});
-
-prev.addEventListener("click", () => {
-    slideTo(index - 1);
-    resetAutoSlide();
-});
-
-function resetAutoSlide() {
-    clearInterval(autoSlide);
-    autoSlide = setInterval(() => slideTo(index + 1), 3000);
-}
+// ... остальной код слайдера ...

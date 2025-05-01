@@ -420,3 +420,22 @@
     justify-content: space-between;
     transform: translateY(-50%);
 }
+/* ===== Dark Theme Sections ===== */
+.dark-theme .about-info-item-number {
+    background-color: var(--color-bg);
+    color: var(--color-accent);
+}
+
+.dark-theme .about-info-item:hover .about-info-item-number {
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+}
+
+.dark-theme .popular-item {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+}
+
+.dark-theme .reviews-arrows a svg path {
+    fill: var(--color-text);
+}

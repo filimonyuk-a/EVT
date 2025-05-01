@@ -292,3 +292,13 @@
         padding: 15px;
     }
 }
+/* ===== Dark Theme Mobile ===== */
+@media (max-width: 768px) {
+    .dark-theme .header .menu {
+        background: rgba(30, 30, 30, 0.95);
+    }
+    
+    .dark-theme .header .menu ul a {
+        color: var(--color-text);
+    }
+}

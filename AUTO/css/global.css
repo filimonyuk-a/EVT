@@ -123,3 +123,27 @@ body {
     border: 1px solid #c4ac46;
     background-color: #313131;
 }
+/* ===== Dark Theme Variables ===== */
+body.dark-theme {
+    --color-bg: #121212;
+    --color-blue: #ffffff;
+    --color-text: #e0e0e0;
+    --color-border: #333333;
+    --color-card-bg: #1e1e1e;
+    --color-input-bg: #2d2d2d;
+    --color-placeholder: #757575;
+    --color-shadow: rgba(0, 0, 0, 0.3);
+    --color-review-bg: #252525;
+    --color-social-icon: #ffffff;
+}
+
+/* Dark Theme Components */
+.dark-theme .contacts-body a svg path,
+.dark-theme .footer-body a svg path {
+    fill: var(--color-social-icon);
+}
+
+.dark-theme .review-item {
+    background: var(--color-review-bg);
+    border-color: var(--color-border);
+}
