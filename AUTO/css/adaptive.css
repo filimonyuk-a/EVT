@@ -1,0 +1,294 @@
+@media screen and (max-width: 1250px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .main {
+        overflow: hidden;
+    }
+
+    .popular-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .popular-item {
+        text-align: center;
+    }
+}
+
+@media (max-width: 1024px) {
+    .menu ul {
+        width: 450px;
+    }
+
+    .about-actions {
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+
+    .about-info-items {
+        margin-bottom: 35px;
+    }
+
+    .contacts {
+        padding: 20px;
+    }
+
+    .contacts .container {
+        justify-content: space-between;
+    }
+
+    .contacts-map iframe {
+        width: 100%;
+        height: 300px;
+    }
+
+    .contacts-info {
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .contacts-blocks {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        max-width: 510px;
+    }
+}
+
+@media (max-width: 768px) {
+    .phone {
+        display: none;
+    }
+
+    .header .logo {
+        margin-right: 0;
+    }
+
+    .header .container {
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    .header .menu {
+        display: none;
+    }
+
+    .header .menu {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.73);
+        z-index: 100;
+    }
+
+    .header .menu ul {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 50px;
+    }
+
+    .header .menu ul a {
+        color: white;
+        font-size: 23px;
+    }
+
+    .header .menu-item {
+        margin: 25px 0;
+    }
+
+    .burger {
+        display: block;
+        width: 36px;
+    }
+
+    .burger svg path {
+        fill: #FCDC55;
+    }
+
+    .header .menu.open {
+        display: flex;
+        align-items: center;
+    }
+
+    .header .menu .close {
+        display: block;
+        width: 24px;
+        height: 24px;
+        fill: white;
+        position: absolute;
+        top: 45px;
+        left: 20px;
+    }
+
+    .contacts {
+        padding: 15px;
+    }
+    .contacts .container {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .contacts-map {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .contacts-info {
+        margin-top: 25px;
+    }
+
+    .contacts-title {
+        font-size: 24px;
+    }
+
+    .contacts-block {
+        padding: 10px;
+    }
+
+    .contacts-blocks {
+        max-width: unset;
+    }
+
+    .contacts-body {
+        font-size: 16px;
+    }
+
+    .contacts-social {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .contacts-social a svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .footer-blocks {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer-address {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-block {
+        text-align: center;
+    }
+
+    .footer-block.footer-social .footer-body {
+        text-align: center;
+    }
+
+    .footer-menu .menu ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .reviews-carousel {
+        padding: 0 30px;
+    }
+}
+
+@media screen and (max-width: 548px) {
+    .main-content-text h1 {
+        font-size: 45px;
+        margin-bottom: 20px;
+    }
+
+    .main-content-description {
+        font-size: 20px;
+    }
+
+    .main {
+        padding-bottom: 90px;
+    }
+
+    .main-content {
+        background-size: 95%;
+        padding: 34px 0 190px;
+        animation: none;
+    }
+
+    .reviews-title {
+        font-size: 30px;
+    }
+
+    .popular-title {
+        font-size: 30px;
+    }
+
+    .about-title {
+        font-size: 30px;
+    }
+
+    .about-info-description {
+        font-size: 20px;
+    }
+
+    .about-info-steps-title {
+        font-size: 30px;
+    }
+
+    .about-info-items {
+        grid-template-columns: repeat(1, minmax(164px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content-text h1 {
+        font-size: 30px;
+    }
+
+    .main-content-description {
+        font-size: 16px;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .contacts {
+        padding: 10px;
+    }
+
+    .contacts-title {
+        font-size: 20px;
+    }
+
+    .contacts-body {
+        font-size: 14px;
+    }
+
+    .contacts-social a svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .footer-menu {
+        margin-left: 0;
+    }
+
+    .review-item {
+        width: 102%;
+        height: 330px;
+        min-width: 100%;
+        padding: 15px;
+    }
+}
